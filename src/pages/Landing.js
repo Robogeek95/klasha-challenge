@@ -1,7 +1,8 @@
-import { Center, Grid, Text } from "@chakra-ui/layout";
+import { Box, Center, Grid, Text } from "@chakra-ui/layout";
 import React from "react";
 import { Route, Switch, useLocation } from "react-router";
-import Dashboard from "../components/Dashboard";
+import Balances from "../components/Balances";
+import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 
 const Landing = () => {
@@ -13,24 +14,31 @@ const Landing = () => {
         {/* sidebar */}
         <Sidebar />
 
-        {/* main */}
-        <Switch>
-          <Route path="/dashboard" component={Dashboard} />
+        <Grid templateRows="auto 1fr" px={8} py={5}>
+          {/* navbar */}
+          <Navbar />
 
-          <Route>
-            <Center>
-              <Text fontSize="24px">
-                <Text
-                  as="span"
-                  sx={{ fontWeight: "bold", textTransform: "capitalize" }}
-                >
-                  {slug}
-                </Text>{" "}
-                appears here
-              </Text>
-            </Center>
-          </Route>
-        </Switch>
+          {/* main */}
+          <Box mt={10}>
+            <Switch>
+              <Route path="/balances" component={Balances} />
+
+              <Route>
+                <Center>
+                  <Text fontSize="24px">
+                    <Text
+                      as="span"
+                      sx={{ fontWeight: "bold", textTransform: "capitalize" }}
+                    >
+                      {slug}
+                    </Text>{" "}
+                    appears here
+                  </Text>
+                </Center>
+              </Route>
+            </Switch>
+          </Box>
+        </Grid>
       </Grid>
     </>
   );
