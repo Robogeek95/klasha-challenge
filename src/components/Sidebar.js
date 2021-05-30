@@ -95,7 +95,6 @@ function NavLink({ link }) {
   let color = active ? "#2A2A2A" : focus ? "#A6ABB2" : "";
   let iconColor = active ? "#2C665D" : focus ? "#A6ABB2" : "#A6ABB2";
 
-  console.log(link.Icon);
   const { Icon, title } = link;
 
   return (

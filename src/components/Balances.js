@@ -57,8 +57,17 @@ const Balances = () => {
         </Box>
       </Grid>
 
-      <Stack spacing={5} mt={10}>
-        <Flex justifyContent="space-between" alignItems="center">
+      <Stack
+        sx={{ overflowY: "scroll", maxWidth: `${window.innerWidth}` }}
+        spacing={5}
+        mt={10}
+      >
+        <Grid
+          templateColumns={["1fr", null, "repeat(2, 1fr)"]}
+          templateRows={["repeat(2, 1fr)", null, "1fr"]}
+          justifyContent="space-between"
+          alignItems="center"
+        >
           <Text color="#2A2A2A" fontSize="18px">
             Payout table
           </Text>
@@ -69,7 +78,7 @@ const Balances = () => {
               Payout
             </Button>
           </HStack>
-        </Flex>
+        </Grid>
         <Box>
           <Table variant="simple" size="lg">
             <Thead bg="#F5F5F5">
