@@ -114,7 +114,7 @@ function Sidebar() {
         sx={{
           overscrollBehavior: "contain",
         }}
-        top="6.5rem"
+        top="0"
         w="280px"
         h="calc(100vh)"
         pb="6"
