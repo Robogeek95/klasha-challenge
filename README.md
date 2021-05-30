@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+> if you get a long error message when starting the dev server, add SKIP_PREFLIGHT_CHECK=true in your .env file
+
 ## Available Scripts
 
 In the project directory, you can run:
