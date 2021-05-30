@@ -8,7 +8,6 @@ import { Tbody } from "@chakra-ui/table";
 import { Thead } from "@chakra-ui/table";
 import { Tr } from "@chakra-ui/table";
 import { Th } from "@chakra-ui/table";
-import { TableCaption } from "@chakra-ui/table";
 import { Table } from "@chakra-ui/table";
 import React from "react";
 import payoutData from "../lib/payoutData.json";
@@ -25,12 +24,15 @@ const Balances = () => {
         <Box p={5}>
           <Flex justifyContent="space-between">
             <Text>Total account balance</Text>
-            <Select value="USD">
-              <option>USD</option>
-              <option>KES</option>
-              <option>NGN</option>
-              <option>GHC</option>
-            </Select>
+
+            <Box>
+              <Select value="USD">
+                <option>USD</option>
+                <option>KES</option>
+                <option>NGN</option>
+                <option>GHC</option>
+              </Select>
+            </Box>
           </Flex>
 
           <Text color="#2A2A2A" fontSize="36px" fontWeight="bold">
@@ -79,7 +81,10 @@ const Balances = () => {
               </Tr>
             </Thead>
             <Tbody
-              sx={{ tr: { cursor: "pointer" }, "tr:hover": { bg: "flushed" } }}
+              sx={{
+                tr: { cursor: "pointer" },
+                "tr:hover": { bg: "#FFFFFF", color: "#A6ABB2" },
+              }}
             >
               {payoutData.map((data) => (
                 <Tr>
