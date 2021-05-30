@@ -55,7 +55,7 @@ const Balances = () => {
       </Grid>
 
       <Stack
-        sx={{ overflowX: "auto", maxWidth: ["340px", null, "100%"] }}
+        sx={{ overflowX: "auto", maxWidth: ["300px", null, "100%"] }}
         spacing={5}
         mt={10}
       >
