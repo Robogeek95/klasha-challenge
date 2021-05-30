@@ -16,7 +16,7 @@ const Balances = () => {
   return (
     <>
       <Grid
-        templateColumns="repeat(2, 1fr)"
+        templateColumns={["1fr", "1fr", "repeat(2, 1fr)"]}
         sx={{ border: "1px solid #EBEBEB", borderRadius: "10px" }}
         gap={5}
         maxWidth="685px"

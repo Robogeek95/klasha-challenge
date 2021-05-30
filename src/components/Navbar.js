@@ -1,6 +1,17 @@
-import { Avatar, AvatarBadge } from "@chakra-ui/avatar";
+import { Avatar } from "@chakra-ui/avatar";
+import { Button } from "@chakra-ui/button";
+import { useDisclosure } from "@chakra-ui/hooks";
 import Icon from "@chakra-ui/icon";
+import { Img } from "@chakra-ui/image";
 import { Box, Flex, HStack, Text } from "@chakra-ui/layout";
+import logo from "../logo.svg";
+import {
+  Drawer,
+  DrawerBody,
+  DrawerContent,
+  DrawerHeader,
+  DrawerOverlay,
+} from "@chakra-ui/modal";
 import {
   Popover,
   PopoverArrow,
@@ -13,6 +24,7 @@ import {
 import { Portal } from "@chakra-ui/portal";
 import React from "react";
 import { useLocation } from "react-router";
+import { SidebarContent } from "./Sidebar";
 
 const NotificationIcon = (props) => (
   <Icon viewBox="0 0 200 200" {...props}>
@@ -25,6 +37,33 @@ const NotificationIcon = (props) => (
   </Icon>
 );
 
+function MenuDrawer() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  return (
+    <>
+      <Button onClick={onOpen}>
+        {/* menuIcon */}
+        {/* <HamburgerIcon sx={{ display: ["block", null, "none"] }} /> */}
+      </Button>
+      <Drawer placement="left" onClose={onClose} isOpen={isOpen}>
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerHeader borderBottomWidth="1px">
+            {/* Logo */}
+            <Box px="8" mt="20px" mb="40px">
+              <Img src={logo} alt="logo" />
+            </Box>
+          </DrawerHeader>
+          <DrawerBody>
+            <SidebarContent />
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
+    </>
+  );
+}
+
 export default function Navbar() {
   let location = useLocation();
   let slug = location.pathname.split("/")[1];
@@ -32,17 +71,23 @@ export default function Navbar() {
   return (
     <>
       <Flex justifyContent="space-between">
-        <Box>
-          <Text
-            fontSize="18px"
-            fontWeight="700"
-            color="#2A2A2A"
-            textTransform="capitalize"
-          >
-            {slug}
-          </Text>
-          <Text fontSize="12px">Today, 19th October 2020</Text>
-        </Box>
+        <HStack spacing={5}>
+          <Box sx={{ display: ["block", null, "none"] }}>
+            <MenuDrawer />
+          </Box>
+
+          <Box>
+            <Text
+              fontSize="18px"
+              fontWeight="700"
+              color="#2A2A2A"
+              textTransform="capitalize"
+            >
+              {slug}
+            </Text>
+            <Text fontSize="12px">Today, 19th October 2020</Text>
+          </Box>
+        </HStack>
 
         <HStack spacing={5}>
           {/* Notification */}

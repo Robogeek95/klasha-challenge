@@ -116,7 +116,7 @@ function NavLink({ link }) {
   );
 }
 
-function SidebarContent() {
+export function SidebarContent() {
   return (
     <Stack spacing={10}>
       {pages.map((page) => (
@@ -146,7 +146,6 @@ function Sidebar() {
         pos="sticky"
         sx={{
           overscrollBehavior: "contain",
-          display: ["none", "none", "block"],
         }}
         top="0"
         w="280px"
