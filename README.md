@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# On my way to becoming a Klashian 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
