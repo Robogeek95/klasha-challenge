@@ -1,18 +1,15 @@
 import { Button } from "@chakra-ui/button";
 import { Input } from "@chakra-ui/input";
-import { Stack } from "@chakra-ui/layout";
-import { Box, Flex, Grid, HStack, Text } from "@chakra-ui/layout";
+import { Box, Flex, Grid, HStack, Text, Stack } from "@chakra-ui/layout";
 import { Select } from "@chakra-ui/select";
-import { Td } from "@chakra-ui/table";
-import { Tbody } from "@chakra-ui/table";
-import { Thead } from "@chakra-ui/table";
-import { Tr } from "@chakra-ui/table";
-import { Th } from "@chakra-ui/table";
-import { Table } from "@chakra-ui/table";
+import { Td, Tbody, Thead, Tr, Th, Table } from "@chakra-ui/table";
 import React from "react";
 import payoutData from "../lib/payoutData.json";
+// import useWindowDimensions from "../hooks/useWindowDimensions";
 
 const Balances = () => {
+  // const { width } = useWindowDimensions();
+
   return (
     <>
       <Grid
@@ -58,7 +55,7 @@ const Balances = () => {
       </Grid>
 
       <Stack
-        sx={{ overflowY: "scroll", maxWidth: `${window.innerWidth}` }}
+        sx={{ overflowX: "auto", maxWidth: ["340px", null, "100%"] }}
         spacing={5}
         mt={10}
       >
@@ -105,17 +102,18 @@ const Balances = () => {
               ))}
             </Tbody>
           </Table>
-          <Button
-            size="lg"
-            colorScheme="green"
-            variant="outline"
-            isFullWidth
-            sx={{ borderColor: "#EBEBEB" }}
-          >
-            See more
-          </Button>
         </Box>
       </Stack>
+
+      <Button
+        size="lg"
+        colorScheme="green"
+        variant="outline"
+        isFullWidth
+        sx={{ borderColor: "#EBEBEB" }}
+      >
+        See more
+      </Button>
     </>
   );
 };

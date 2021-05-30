@@ -10,7 +10,7 @@ const Landing = () => {
   let slug = location.pathname.split("/")[1];
   return (
     <>
-      <Grid templateColumns="auto 1fr">
+      <Grid templateColumns={["1fr", null, "auto 1fr"]}>
         {/* sidebar */}
         <Sidebar />
 
